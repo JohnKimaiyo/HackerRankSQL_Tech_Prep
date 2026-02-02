@@ -9,4 +9,10 @@
   -- distplay the contry column only -- 
 SELECT DISTINCT country
 FROM customers;
+
+
+-- count the total number of employees --
+SELECT COUNT ([employee_name]) AS Total_number_of_employee
+FROM [HackerRankSQL].[dbo].[employees]
+
  
