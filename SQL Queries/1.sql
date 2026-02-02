@@ -5,3 +5,8 @@
        FROM [HackerRankSQL].[dbo].[students]
        WHERE [marks] >75
        ORDER BY [marks] DESC;
+
+  -- distplay the contry column only -- 
+SELECT DISTINCT country
+FROM customers;
+ 
