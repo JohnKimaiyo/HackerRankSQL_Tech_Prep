@@ -13,3 +13,9 @@
 
  SELECT COUNT(*) AS Total_epmloyees
  FROM  [HackerRankSQL].[dbo].[employees]
+
+   -- show all producst with a price grater thn 200 -- 
+  SELECT  *
+    FROM  [HackerRankSQL].[dbo].[products]
+    WHERE price > 200
+    ORDER BY price DESC;
