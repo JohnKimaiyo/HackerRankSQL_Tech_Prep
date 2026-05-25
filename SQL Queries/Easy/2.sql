@@ -7,3 +7,9 @@
 
   SELECT DISTINCT [country]
   FROM [HackerRankSQL].[dbo].[customers]
+
+
+   -- Find total number of emplopyees --
+
+ SELECT COUNT(*) AS Total_epmloyees
+ FROM  [HackerRankSQL].[dbo].[employees]
