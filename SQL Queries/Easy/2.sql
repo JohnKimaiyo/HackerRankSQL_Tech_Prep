@@ -27,3 +27,7 @@
 
   SELECT DISTINCT Country
   FROM [dbo].[customers]
+
+  -- find the totyal number of employees --
+    SELECT COUNT(*) AS total_employees
+  FROM [dbo].[employees];
