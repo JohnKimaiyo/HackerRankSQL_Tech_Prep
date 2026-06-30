@@ -19,3 +19,11 @@
     FROM  [HackerRankSQL].[dbo].[products]
     WHERE price > 200
     ORDER BY price DESC;
+
+
+    --    display distinct countries from the customers table --- 
+      USE  HackerRankSQL;
+  GO
+
+  SELECT DISTINCT Country
+  FROM [dbo].[customers]
