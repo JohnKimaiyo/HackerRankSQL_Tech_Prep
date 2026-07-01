@@ -72,3 +72,14 @@ ON c.customer_id = o.customer_id
 GROUP BY c.customer_id,
 c.customer_name
 HAVING COUNT(order_id) > 2;
+
+
+
+-- calculate total quantity sold per product --
+SELECT p.product_name,
+SUM(oi.quantity) AS total_quantity
+FROM [dbo].[products] AS p
+INNER JOIN [dbo].[order_items] AS oi
+ON p.product_id = oi.product_id
+GROUP BY p.product_name
+ORDER BY total_quantity DESC;
