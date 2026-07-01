@@ -49,3 +49,13 @@ FROM [dbo].[employees] AS e
 INNER JOIN [dbo].[departments] AS d
     ON e.department_id = d.department_id
 GROUP BY d.department_name;
+
+
+-- count the number of employees in each department --
+SELECT d.department_name,
+       COUNT(e.employee_id) AS employee_count
+FROM [dbo].[departments] AS d
+LEFT JOIN [dbo].[employees] AS e
+ON d.department_id = e.department_id
+GROUP BY d.department_name
+ORDER BY COUNT(e.employee_id) DESC;
