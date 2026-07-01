@@ -59,3 +59,16 @@ LEFT JOIN [dbo].[employees] AS e
 ON d.department_id = e.department_id
 GROUP BY d.department_name
 ORDER BY COUNT(e.employee_id) DESC;
+
+
+-- Find customers who have placed more than 2 orders --
+
+SELECT c.customer_id,   
+    c.customer_name,
+    COUNT(o.order_id) AS total_orders
+FROM [dbo].[customers] AS c
+INNER JOIN [dbo].[orders] AS o
+ON c.customer_id = o.customer_id
+GROUP BY c.customer_id,
+c.customer_name
+HAVING COUNT(order_id) > 2;
