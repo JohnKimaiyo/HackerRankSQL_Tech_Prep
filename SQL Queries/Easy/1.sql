@@ -23,10 +23,12 @@ SELECT TOP (1000) [product_id]
   WHERE [price] > 200
   ORDER BY  [price] DESC;'
   
-SELECT 
- [departments].[department_name],
-AVG([salary]) as Average_Salary 
-FROM [HackerRankSQL].[dbo].[employees]
-JOIN [HackerRankSQL].[dbo].[departments]
-ON [employees].[department_id] =  [departments].[department_id]
-GROUP BY department_name
+-- Find employee earning more than the average salary --
+
+SELECT employee_id,
+employee_name,
+salary
+FROM [dbo].[employees]
+WHERE salary>(
+SELECT AVG(salary)
+FROM [dbo].[employees]) ORDER BY salary DESC;
