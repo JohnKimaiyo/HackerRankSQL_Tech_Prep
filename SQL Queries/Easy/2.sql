@@ -10,3 +10,7 @@ ORDER BY marks DESC;
 
 SELECT DISTINCT country
 FROM [dbo].[customers]
+
+-- find the total number of employees --
+SELECT COUNT(*) AS total_employees
+FROM [dbo].[employees]
