@@ -14,3 +14,12 @@ FROM [dbo].[customers]
 -- find the total number of employees --
 SELECT COUNT(*) AS total_employees
 FROM [dbo].[employees]
+
+-- show all products with price greater than 200 --
+
+SELECT product_id,
+product_name,
+price
+FROM [dbo].[products] 
+WHERE price >200
+order by PRICE  desc;
