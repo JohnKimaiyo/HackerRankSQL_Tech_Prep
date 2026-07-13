@@ -5,3 +5,8 @@ marks
 FROM [dbo].[students] 
 WHERE marks > 75
 ORDER BY marks DESC;
+
+-- display disticnt countries from the customers table --
+
+SELECT DISTINCT country
+FROM [dbo].[customers]
