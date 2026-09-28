@@ -46,3 +46,13 @@ FROM [dbo].[employees]
 WHERE salary > ( SELECT AVG(salary)
 FROM [dbo].[employees])
 ORDER BY salary DESC;
+
+
+-- Find product that have never been ordered -- 
+SELECT p.product_id,
+p.product_name
+FROM [dbo].products AS p
+WHERE NOT EXISTS (
+SELECT 1 
+FROM [dbo].[order_items] AS oi
+WHERE oi.product_id = p.product_id);
