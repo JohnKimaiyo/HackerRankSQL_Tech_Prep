@@ -28,3 +28,21 @@ INNER JOIN [dbo].[orders] AS o
 ON c.customer_id = o.customer_id
 GROUP BY  c.customer_id, c.customer_name
 HAVING COUNT (o.order_id) > 2
+
+-- Calculate total quantity sold per product --
+SELECT p.product_name,
+SUM(oi.quantity) AS total_quantity
+FROM [dbo].[products] AS p
+INNER JOIN [dbo].[order_items] AS oi
+ON p.product_id = oi.product_id
+GROUP BY p.product_name
+ORDER BY total_quantity DESC;
+
+-- Find employees earning more than the average salary --
+SELECT employee_id,
+employee_name,
+salary
+FROM [dbo].[employees]
+WHERE salary > ( SELECT AVG(salary)
+FROM [dbo].[employees])
+ORDER BY salary DESC;
