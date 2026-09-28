@@ -11,6 +11,8 @@ SELECT
 FROM [dbo].[employees];
 
 
+-- Find the highest paid employee in each department --
+
 WITH ranked_employees AS (
     SELECT employee_id,
            employee_name,
